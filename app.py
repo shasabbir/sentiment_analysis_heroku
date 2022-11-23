@@ -31,8 +31,8 @@ def get_sentiment():
     padded = pad_sequences(seq, maxlen=max_seq_len)
 
     pred = model.predict(padded)
-    
-    return jsonify({'sentiment':class_names[np.argmax(pred)],'accuracy':np.argmax(pred)}), 200
+    #print(class_names[np.argmax(pred)])
+    return jsonify({'sentiment':class_names[np.argmax(pred)]}), 200
 
   
 # driver function
